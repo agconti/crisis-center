@@ -1,4 +1,5 @@
-const app = require('express')()
+const express = require('express')
+const app = express()
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const port = Number(process.env.PORT) || 3000
@@ -10,8 +11,12 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+// static files
+app.use(express.static(`jspm_packages`))
+app.get('/', (req, res) => res.sendFile(`${__dirname}/index.html`))
+app.get('/config.js', (req, res) => res.sendFile(`${__dirname}/config.js`))
 
-// app routes
+// api routes
 app.get('/crises', (req, res) => {
   res.send(fixtures.CRISES)
 })
