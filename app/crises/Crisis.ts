@@ -1,6 +1,6 @@
 export class Crisis {
-  let id: number
-  let description: string
+  id: number
+  description: string
 
   constructor(id: number, description: string){}
 }
