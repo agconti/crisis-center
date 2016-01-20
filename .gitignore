@@ -43,3 +43,4 @@ jspm_packages
 
 # server
 !index.js
+!fixtures.js
