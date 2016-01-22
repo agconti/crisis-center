@@ -11,7 +11,7 @@ const uristring = process.env.MONGOLAB_URI ||
                   'mongodb://localhost/crisis-center'
 
 
-// connect to the database
+// database config
 mongoose.connect(uristring, err => {
    if (err) {
      console.error(err)
