@@ -9,7 +9,6 @@ const port = Number(process.env.PORT) || 3000
 const uristring = process.env.MONGOLAB_URI ||
                   process.env.MONGOHQ_URL ||
                   'mongodb://localhost/crisis-center'
-const fixtures = require('./fixtures')
 
 
 // connect to the database
